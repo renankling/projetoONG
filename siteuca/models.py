@@ -13,6 +13,7 @@ class Integrante(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="integrantes")
     nome = models.CharField(max_length=120)
     funcao = models.CharField(max_length=120, blank=True)
+    imagem = models.ImageField(upload_to="integrantes/", blank=True, null=True)
     descricao = models.TextField(blank=True)
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -25,7 +26,7 @@ class Noticia(models.Model):
     conteudo = models.TextField(blank=True)
     data_publicacao = models.DateTimeField(auto_now_add=True)
     imagem = models.ImageField(upload_to="noticias/", blank=True, null=True)
-    link_externo = models.URLField(blank=True, null=True)  # 👈 novo campo
+    link_externo = models.URLField(blank=True, null=True)  
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
@@ -35,7 +36,7 @@ class Noticia(models.Model):
 class Voluntario(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="voluntarios")
     nome = models.CharField(max_length=120)
-    email = models.EmailField()
+    email = models.EmailField(max_length=100,blank=False)
     telefone = models.CharField(max_length=30, blank=False)
     endereco = models.CharField(max_length=255, blank=False) 
     mensagem = models.TextField(blank=True)
