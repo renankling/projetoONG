@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Voluntarie-se{% endblock %}
+
+{% block content %}
+<section class="voluntario-card">
+  <h2>Voluntarie-se</h2>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+
+    <label for="{{ form.nome.id_for_label }}">Nome</label>
+    {{ form.nome }}
+
+    <label for="{{ form.email.id_for_label }}">E-mail</label>
+    {{ form.email }}
+
+    <label for="{{ form.telefone.id_for_label }}">Telefone</label>
+    {{ form.telefone }}
+
+    <label for="{{ form.endereco.id_for_label }}">Endereço</label>
+    {{ form.endereco }}
+
+    <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
+    {{ form.mensagem }}
+
+    <button type="submit" class="btn-enviar">Enviar</button>
+
+    {% if form.errors %}
+      <div class="erros">
+        <p>Verifique os campos destacados.</p>
+        {{ form.errors }}
+      </div>
+    {% endif %}
+  </form>
+</section>
+{% endblock %}

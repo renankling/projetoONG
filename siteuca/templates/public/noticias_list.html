@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Notícias{% endblock %}
+{% block content %}
+<section class="noticias">
+  <h1>Notícias</h1>
+
+  <div class="grid">
+    {% for noticia in noticias %}
+      <article class="card-noticia">
+        {% if noticia.imagem %}
+          <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
+        {% endif %}
+        <h3>{{ noticia.titulo }}</h3>
+        <p>{{ noticia.conteudo|truncatechars:180 }}</p>
+        {% if noticia.link_externo %}
+          <a href="{{ noticia.link_externo }}" target="_blank" class="btn-link">Ver no portal</a>
+        {% endif %}
+      </article>
+    {% empty %}
+      <p>Nenhuma notícia cadastrada.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
