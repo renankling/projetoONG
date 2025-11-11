@@ -5,7 +5,28 @@
   <title>{% block title %}Projeto Uçá{% endblock %}</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/body.css">
+    <link rel="icon" type="image/x-icon" href="../Imagens/Logo icon.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
+<header>
+<div class="header">
+        <img src="../Imagens/Logouca.png" alt="Logo do Projeto Uçá" class="logo">
+        
+        <nav>
+            <ul>
+                <li><a href="../Html/Equipe.html">Equipe</a></li>
+                <li><a href="../Html/Contato.html">Contato</a></li>
+                <li><a href="../Html/Guardiõesdomar.html">Guardiões do mar</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <body>
   {% block content %}{% endblock %}
 </body>
