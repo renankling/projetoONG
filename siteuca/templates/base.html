@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <title>{% block title %}Projeto Uçá{% endblock %}</title>
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  <link rel="stylesheet" href="./CSS/reset.css">
+
+
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+  
     <link rel="stylesheet" href="./CSS/header.css">
     <link rel="stylesheet" href="./CSS/body.css">
     <link rel="icon" type="image/x-icon" href="../Imagens/Logo icon.png"> 
@@ -16,11 +19,11 @@
 
 <header>
 <div class="header">
-        <img src="../Imagens/Logouca.png" alt="Logo do Projeto Uçá" class="logo">
+        <img src="../static/img/Logouca.png" alt="Logo do Projeto Uçá" class="logo">
         
         <nav>
             <ul>
-                <li><a href="../Html/Equipe.html">Equipe</a></li>
+                <li><a href="{% url 'integrantes_list' %}">Equipe</a></li>
                 <li><a href="../Html/Contato.html">Contato</a></li>
                 <li><a href="../Html/Guardiõesdomar.html">Guardiões do mar</a></li>
             </ul>
@@ -30,4 +33,5 @@
 <body>
   {% block content %}{% endblock %}
 </body>
+<footer></footer>
 </html>
