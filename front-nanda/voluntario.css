@@ -228,6 +228,34 @@ a:active {
   text-decoration: none;
 }
 
+.logo-dupla {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-uca {
+  width: 150px;
+  height: auto;
+}
+
+.logo-petrobras {
+  width: 90px;
+  height: auto;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.logo-petrobras:hover {
+  opacity: 1;
+}
+
+.logo-guardioes {
+  width: 220px;
+  height: auto;
+  margin-top: -19px;
+}
+
 @media (max-width: 900px) {
   .voluntario-container {
     flex-direction: column;
