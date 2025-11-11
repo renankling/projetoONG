@@ -22,7 +22,7 @@
     <div class="formulario">
       <h2>Voluntarie-se</h2>
       <h3>Registre-se para voluntariar-se!</h3>
-      <form action="#" method="POST">
+      <form id="form-voluntario" action="#" method="POST">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
@@ -30,7 +30,7 @@
         <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
         <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" maxlength="11">
 
         <label for="endereco">Endereço</label>
         <input type="text" id="endereco" name="endereco" placeholder="Digite o nome da rua">
@@ -112,5 +112,6 @@
     </div>
   </div>
 </footer>
+<script src="js/voluntario.js"></script>
 </body>
 </html>
