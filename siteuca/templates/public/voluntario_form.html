@@ -3,35 +3,57 @@
 {% block title %}Voluntarie-se{% endblock %}
 
 {% block content %}
-<section class="voluntario-card">
-  <h2>Voluntarie-se</h2>
+  <main class="voluntario-container">
+    <div class="formulario">
+      <h2>Voluntarie-se</h2>
+      <h3>Registre-se para voluntariar-se!</h3>
+      <form action="#" method="POST">
+        {% csrf_token %}
+        <label for="{{ form.nome.id_for_label }}">Nome</label>
+        {{ form.nome }}
 
-  <form method="post" novalidate>
-    {% csrf_token %}
+        <label for="{{ form.nome.id_for_label }}">E-mail</label>
+        {{ form.email }}
 
-    <label for="{{ form.nome.id_for_label }}">Nome</label>
-    {{ form.nome }}
+        <label for="{{ form.telefone.id_for_label }}">Telefone</label>
+        {{ form.telefone }}
 
-    <label for="{{ form.email.id_for_label }}">E-mail</label>
-    {{ form.email }}
+        <label for="{{ form.endereco.id_for_label }}">CEP</label>
+        {{ form.endereco }}
 
-    <label for="{{ form.telefone.id_for_label }}">Telefone</label>
-    {{ form.telefone }}
+        <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
+        {{ form.mensagem }}
 
-    <label for="{{ form.endereco.id_for_label }}">Endereço</label>
-    {{ form.endereco }}
-
-    <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
-    {{ form.mensagem }}
-
-    <button type="submit" class="btn-enviar">Enviar</button>
-
-    {% if form.errors %}
+        <button type="submit" class="btn-enviar">Enviar</button>
+            {% if form.errors %}
       <div class="erros">
         <p>Verifique os campos destacados.</p>
         {{ form.errors }}
       </div>
     {% endif %}
-  </form>
-</section>
+      </form>
+    </div>
+
+    <div class="info-lateral">
+      <div class="caixa-info">
+        <p><strong>Informações adicionais ou dúvidas:</strong><br>
+          <a href="mailto:guardioesdomar@guardioesdomar.org.br">guardioesdomar@guardioesdomar.org.br</a></p>
+
+        <p><strong>Informações para imprensa:</strong><br>
+          <a href="mailto:comunicacao@guardioesdomar.org.br">comunicacao@guardioesdomar.org.br</a></p>
+
+        <p><strong>Banco de oportunidades:</strong><br>
+          <a href="mailto:rh@guardioesdomar.org.br">rh@guardioesdomar.org.br</a></p>
+      </div>
+    <div class="video-box">
+         <iframe
+            src="https://www.youtube.com/embed/SfJIFbAovC4?si=BzITP3GW-VjMCDqu"
+            title="Vídeo Projeto Uçá"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        ></iframe>
+    </div>
+    </div>
+  </main>
 {% endblock %}

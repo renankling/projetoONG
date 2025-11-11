@@ -6,11 +6,10 @@
   {% load static %}
 
 
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/header.css">
-  
-    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="../static/css/base/reset.css">
+    <link rel="stylesheet" href="../static/css/base/header.css">
     <link rel="stylesheet" href="./CSS/body.css">
+    <link rel="stylesheet" href="../static/css/base/footer.css">
     <link rel="icon" type="image/x-icon" href="../Imagens/Logo icon.png"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +17,7 @@
 </head>
 
 <header>
-<div class="header">
-        <img src="../static/img/Logouca.png" alt="Logo do Projeto Uçá" class="logo">
+        <a class="logoLink" href="{% url 'home' %}"><img src="../static/img/Logouca.png" alt="Logo do Projeto Uçá" class="logo"></a>
         
         <nav>
             <ul>
@@ -33,5 +31,41 @@
 <body>
   {% block content %}{% endblock %}
 </body>
-<footer></footer>
+<footer>
+  <footer class="rodape">
+  <div class="rodape-info">
+    <div class="coluna logo-coluna">
+      <img src="imgs/logo.png" alt="Logo Projeto Uçá" class="logo-uca">
+    <div class="coluna-info">
+      <p><strong>CNPJ:</strong> 02.643.111/0001-21</p>
+      <p><strong>Endereço:</strong><br><a href="https://www.google.com/maps?q=Rua+Alfredo+Azamor,+739,+São+Gonçalo,+RJ">Rua Alfredo Azamor, 739<br>Casa 01 Boa Vista – São Gonçalo – RJ</a></p>
+    </div>
+  </div>
+
+    <div class="coluna">
+      <h3>Sobre</h3>
+      <a href="#">Quem somos</a>
+      <a href="colaboradores.html">Conheça a equipe</a>
+      <a href="{% url 'voluntario_form' %}">Seja um voluntário</a>
+      <a href="noticias.html">Notícias</a>
+    </div>
+
+    <div class="coluna">
+      <h3>Trilhas</h3>
+      <a href="#">Comunidades tradicionais</a>
+      <a href="#">Educação ambiental</a>
+      <a href="#">Juventude guardiã</a>
+      <a href="#">Produção científica</a>
+      <a href="#">Restauração florestal</a>
+    </div>
+
+    <div class="coluna">
+      <h3>Contatos</h3>
+      <p><strong>Telefone:</strong> <a href="tel:2126058016">(21) 2605-8016</a></p>
+      <p><strong>Instagram:<a href="https://www.instagram.com/projetouca" target="_blank" rel="noopener noreferrer"> @projetouca</a></strong></a></p>
+      <p><strong>E-mail:</strong><br> <a href="mailto:guardioesdomar@guardioesdomar.org.br"> guardioesdomar@guardioesdomar.org.br</a></p>
+    </div>
+  </div>
+</footer>
+</footer>
 </html>
