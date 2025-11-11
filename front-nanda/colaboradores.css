@@ -182,7 +182,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  margin-top: -30px;
 }
 
 a,
@@ -197,6 +196,7 @@ a:active {
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-bottom: -30px;
 }
 
 .logo-uca {
