@@ -2,21 +2,12 @@
   font-family: 'Montserrat-Regular';
   src: url('../../fonts/Montserrat/Montserrat-Regular.ttf');
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat-Regular', sans-serif;
-}
-
 .topo {
   background-color: #024959;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 50px;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
