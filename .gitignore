@@ -55,13 +55,15 @@ cover/
 # Translations
 *.mo
 *.pot
-
+**/__pycache__/
+*.py[cod]
 # Django stuff:
 *.log
+/media/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-
+*.sqlite3
 # Flask stuff:
 instance/
 .webassets-cache
@@ -150,7 +152,7 @@ activemq-data/
 
 # SageMath parsed files
 *.sage.py
-
+node_modules/
 # Environments
 .env
 .envrc
@@ -160,7 +162,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+.venv/
+/staticfiles/
 # Spyder project settings
 .spyderproject
 .spyproject
