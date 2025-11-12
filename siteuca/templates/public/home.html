@@ -7,24 +7,32 @@
 
 {% block content %}
 <section class="banner">
-    <div class="overlay">
-        <div class="banner-conteudo">
-            <div class="banner-imagem">
-                <img src="{% static 'img/pincaucaimg.png'%}" alt="">
-                <img src="{% static 'img/Projetoucaescrita.png'%}" alt="">
-            </div>
-            <div class="banner-texto">
-                <h1>Projeto UÇÁ</h1>
-                <h3>Fase IV (2012-2024)</h3>
-                <p>
-                    Iniciado em julho de 2012, o Projeto Uçá entra em sua quarta fase atuando em quatro eixos temáticos.
-                    Seu principal objetivo é a conservação dos manguezais, aliada à promoção de educação ambiental crítica,
-                    à geração de conhecimento científico e à democratização do saber sobre os ambientes costeiros marinhos.
-                </p>
-                <p><strong>Financiador:</strong> Patrocínio Petrobras.</p>
-                <img class="banner-petro" src="{% static 'img/petrobras.png'%}" alt="Logo Petrobras">
-                <a href="{% url 'voluntario_form' %}" class="banner-btn">Voluntaria-se</a>
-        </div>
+  <div class="overlay"></div>
+
+  <div class="banner-conteudo">
+    <div class="banner-imagem">
+      <img src="{% static 'img/pincaucaimg.png' %}" alt="Logo Projeto Uçá">
+      <img src="{% static 'img/Projetoucaescrita.png' %}" alt="Título Projeto Uçá">
     </div>
+
+    <div class="banner-texto">
+      <h1>Projeto UÇÁ</h1>
+      <h3>Fase IV (2012-2024)</h3>
+      <p>
+        Iniciado em julho de 2012, o Projeto Uçá entra em sua quarta fase atuando em quatro eixos temáticos.
+        Seu principal objetivo é a conservação dos manguezais, aliada à promoção de educação ambiental crítica,
+        à geração de conhecimento científico e à democratização do saber sobre os ambientes costeiros marinhos.
+      </p>
+      <p><strong>Financiador:</strong> Patrocínio Petrobras.</p>
+      <a href="{% url 'voluntario_form' %}" class="banner-btn">Voluntarie-se</a>
+    </div>
+  </div>
+</section>
+<section class="noticias">
+    {% include 'public/noticias_preview.html' %}
+
+<div class="ver-mais-container">
+  <a href="{% url 'noticias_list' %}" class="banner-btn">Ver todas as notícias</a>
+</div>
 </section>
 {% endblock %}
