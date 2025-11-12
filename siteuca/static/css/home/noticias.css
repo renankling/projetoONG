@@ -26,7 +26,6 @@
 .noticias-grid {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: stretch;
   gap: 30px;
   overflow-x: auto;
@@ -127,7 +126,7 @@
     font-size: 1rem;
   }
 
-  .noticias-grid {
+.noticias-grid {
   display: flex;
   flex-direction: column;
 }
