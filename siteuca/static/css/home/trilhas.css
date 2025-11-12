@@ -1,0 +1,63 @@
+.trilhas {
+  background-color: #f7f7f7;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.trilhas h2{
+  font-size: 2.5rem;
+    color: #024959;
+    margin-bottom: 10px;
+}
+.trilhas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.trilha-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.trilha-card:hover {
+  transform: scale(1.03);
+}
+
+.trilha-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.trilha-card h3 {
+  margin: 15px;
+  color: #024959;
+}
+
+.trilha-card p {
+  margin: 0 15px 20px;
+  color: #555;
+}
+
+.trilha-btn {
+  display: block;
+  margin: 0 15px 20px;
+  text-align: center;
+  background-color: #024959;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.trilha-btn:hover {
+  background-color: #037c91;
+}

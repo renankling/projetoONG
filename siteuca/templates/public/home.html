@@ -4,6 +4,7 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/home/body.css' %}">
 <link rel="stylesheet" href="{% static 'css/home/noticias.css' %}">
+<link rel="stylesheet" href="{% static 'css/home/trilhas.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -29,11 +30,72 @@
     </div>
   </div>
 </section>
-<section>
-    {% include 'public/noticias_preview.html' %}
 
-<div class="ver-mais-container">
+
+<section class="noticias-pagina">
+  <div class="noticias-header">
+    <h1>Últimas Notícias</h1>
+    <p>Confira as ações mais recentes do Projeto Uçá.</p>
+  </div>
+
+  <div class="noticias-grid">
+    <div class="noticia-card">
+      <img src="{% static 'img/noticias/imagemntc1.png' %}" alt="Imagem da notícia 1">
+      <div class="noticia-detalhe">
+        <h2>Mutirão de limpeza nos manguezais</h2>
+        <p>Voluntários se reuniram para recolher resíduos e conscientizar a comunidade sobre a preservação dos ecossistemas costeiros.</p>
+        <a href="#" class="noticia-btn">Leia mais</a>
+      </div>
+    </div>
+
+    <div class="noticia-card">
+      <img src="{% static 'img/noticias/imagemntc2.png' %}" alt="Imagem da notícia 2">
+      <div class="noticia-detalhe">
+        <h2>Parceria amplia ações de educação ambiental</h2>
+        <p>O Projeto Uçá firma parceria com instituições locais para expandir atividades de formação e pesquisa em sustentabilidade.</p>
+        <a href="#" class="noticia-btn">Leia mais</a>
+      </div>
+    </div>
+
+    <div class="noticia-card">
+      <img src="{% static 'img/noticias/imagemntc3.png' %}" alt="Imagem da notícia 3">
+      <div class="noticia-detalhe">
+        <h2>Aumento da biodiversidade no estuário</h2>
+        <p>Pesquisas recentes mostram melhorias significativas na fauna e flora das áreas restauradas desde o início do projeto.</p>
+        <a href="#" class="noticia-btn">Leia mais</a>
+      </div>
+    </div>
+  </div>
+  <div class="ver-mais-container">
   <a href="{% url 'noticias_list' %}" class="banner-btn">Ver todas as notícias</a>
 </div>
+</section>
+
+
+<section class="trilhas">
+  <h2>Trilhas em Quadrinhos</h2>
+  <div class="trilhas-container">
+    <div class="trilha-card">
+      <img src="{% static 'img/trilhas/anais-seminario-redagua.jpg' %}" alt="Trilha 1">
+      <h3>Seminario de educação ambiental redagua</h3>
+      <a href="#" class="trilha-btn">Ler História</a>
+    </div>
+
+    <div class="trilha-card">
+      <img src="{% static 'img/trilhas/Manual-de-Restauracao-Florestal-De-Manguezais.png' %}" alt="Trilha 2">
+      <h3>Manual de Restauração frorestal de manguezais</h3>
+      <a href="#" class="trilha-btn">Ler História</a>
+    </div>
+
+    <div class="trilha-card">
+      <img src="{% static 'img/trilhas/Praticas-de-Educacao-Ambiental-4.png' %}" alt="Trilha 3">
+      <h3>Pratica de educação ambiental 4</h3>
+      <a href="#" class="trilha-btn">Ler História</a>
+    </div>
+  </div>
+
+  <div class="ver-mais-container">
+    <a href="#" class="banner-btn">Ver todas as trilhas</a>
+  </div>
 </section>
 {% endblock %}
