@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../../fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
+body {
+  background-color: #115F71;
+  color: white;
+  min-height: 100vh;
+}
+
+
+.banner {
+  position: relative;
+  background: url("../../img/image\ 13.png") center/cover no-repeat;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.banner h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.equipe-container {
+  background-color: #045d6a;
+  text-align: center;
+  padding: 60px 40px 40px;
+  color: white;
+  margin-bottom: 0;
+}
+
+.equipe-container h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.grid-equipe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  justify-content: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  width: 200px;
+  transition: 0.3s;
+  backdrop-filter: blur(4px);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+
+@media (max-width: 900px) {
+  .voluntario-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 50px;
+  }
+
+  .grid-equipe {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    justify-items: center;
+  }
+
+  .rodape-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-coluna {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .voluntario-container {
+    padding: 40px 20px;
+  }
+
+  .rodape-info {
+    gap: 25px;
+  }
+
+  .equipe-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('fontes/Montserrat/Montserrat-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
+body {
+  background-image: url('../../img/Manual-de-Restauracao-de-Manguezais.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 100vh;
+}
+
+.voluntario-container {
+    color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 100px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.formulario {
+  background-color: rgba(2, 73, 89, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 350px;
+  backdrop-filter: blur(6px);
+}
+
+.formulario h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.formulario h3 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.formulario label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+.btn-enviar {
+  background-color: #007b8a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.btn-enviar:hover {
+  background-color: #009fb8;
+}
+
+.info-lateral {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caixa-info {
+  background-color: rgba(2, 73, 89, 0.75);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.caixa-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.caixa-info a {
+  color: #8bd6e0;
+  text-decoration: none;
+}
+
+.caixa-info a:hover {
+  text-decoration: underline;
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 435px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+

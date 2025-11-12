@@ -3,6 +3,7 @@
 {% block title %}Voluntarie-se{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/voluntario/voluntario_form.css' %}">
   <main class="voluntario-container">
     <div class="formulario">
       <h2>Voluntarie-se</h2>
@@ -18,7 +19,7 @@
         <label for="{{ form.telefone.id_for_label }}">Telefone</label>
         {{ form.telefone }}
 
-        <label for="{{ form.endereco.id_for_label }}">CEP</label>
+        <label for="{{ form.endereco.id_for_label }}">Endereço</label>
         {{ form.endereco }}
 
         <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
@@ -33,7 +34,6 @@
     {% endif %}
       </form>
     </div>
-
     <div class="info-lateral">
       <div class="caixa-info">
         <p><strong>Informações adicionais ou dúvidas:</strong><br>
@@ -45,15 +45,16 @@
         <p><strong>Banco de oportunidades:</strong><br>
           <a href="mailto:rh@guardioesdomar.org.br">rh@guardioesdomar.org.br</a></p>
       </div>
-    <div class="video-box">
-         <iframe
-            src="https://www.youtube.com/embed/SfJIFbAovC4?si=BzITP3GW-VjMCDqu"
-            title="Vídeo Projeto Uçá"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/SfJIFbAovC4?rel=0"
+          title="Vídeo Projeto Uçá"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
         ></iframe>
-    </div>
+      </div>
     </div>
   </main>
 {% endblock %}
