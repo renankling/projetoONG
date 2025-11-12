@@ -2,62 +2,127 @@
   background-color: #f7f7f7;
   padding: 80px 40px;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.4s ease;
 }
 
-.trilhas h2{
+.trilhas h2 {
   font-size: 2.5rem;
-    color: #024959;
-    margin-bottom: 10px;
+  color: #024959;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
 }
+
+.trilhas p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
 .trilhas-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 30px;
+  scroll-behavior: smooth;
 }
 
 .trilha-card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 300px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 320px;
   overflow: hidden;
   text-align: left;
-  transition: transform 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .trilha-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .trilha-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trilha-card:hover img {
+  transform: scale(1.05);
 }
 
 .trilha-card h3 {
-  margin: 15px;
+  margin: 18px 15px 10px;
   color: #024959;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
 }
 
 .trilha-card p {
   margin: 0 15px 20px;
   color: #555;
+  line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
+
 .trilha-btn {
-  display: block;
-  margin: 0 15px 20px;
-  text-align: center;
-  background-color: #024959;
-  color: #fff;
-  padding: 10px;
-  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #037c91, #024959);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin: 30px;
+  margin-left: 80px;
 }
 
 .trilha-btn:hover {
-  background-color: #037c91;
+  background: linear-gradient(135deg, #049cb1, #036278);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.trilha-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .trilhas {
+    padding: 60px 20px;
+  }
+
+  .trilhas h2 {
+    font-size: 2rem;
+  }
+
+  .trilhas p {
+    font-size: 1rem;
+  }
+
+  .trilhas-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trilha-card {
+    width: 90%;
+  }
+
+  .trilha-btn-container {
+    margin-top: 40px;
+  }
 }

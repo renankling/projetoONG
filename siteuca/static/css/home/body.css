@@ -7,46 +7,72 @@
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* conteúdo no lado direito */
-  color: white;
+  justify-content: flex-end;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
   padding: 40px;
+  transition: all 0.5s ease-in-out;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
   z-index: 1;
+  transition: opacity 0.6s ease;
+}
+
+.banner:hover .overlay {
+  opacity: 0.9;
 }
 
 .banner-conteudo {
- position: relative;
-    z-index: 2;
-    width: 50%;
-    max-width: 600px;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .banner-texto {
   text-align: left;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .banner-imagem {
   display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 15px;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  gap: 15px;
+  transition: transform 0.4s ease;
+}
+
+.banner-imagem:hover {
+  transform: scale(1.03);
 }
 
 .banner-imagem img:first-child {
-  width: 100px;
+  width: 90px;
   height: auto;
 }
 
@@ -54,57 +80,60 @@
   width: 180px;
   height: auto;
   margin-top: 5px;
-  margin-left: 15px;
 }
 
 .banner-texto h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .banner-texto h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 15px;
+  font-weight: 500;
+  color: #d9edf2;
 }
 
 .banner-texto p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 10px;
-}
-
-.banner-petro {
-  width: 100px;
-  margin-top: 10px;
+  color: #f4f4f4;
 }
 
 .banner-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #024959;
+  background: linear-gradient(135deg, #037c91, #024959);
   color: white;
-  padding: 14px 22px;
+  padding: 14px 24px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s;
-  margin-top: 20px;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .banner-btn:hover {
-  background-color: #023d59;
+  background: linear-gradient(135deg, #049cb1, #036278);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* Responsividade */
 @media (max-width: 1024px) {
   .banner {
-    justify-content: center; /* centraliza o conteúdo */
+    justify-content: center;
+    padding: 60px 20px;
   }
 
   .banner-conteudo {
     width: 90%;
-    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 
   .banner-texto {
@@ -112,9 +141,7 @@
   }
 
   .banner-imagem {
-    align-items: center;
-    display: flex
-    ;justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -124,11 +151,11 @@
   }
 
   .banner-imagem img:last-child {
-    width: 140px;
+    width: 130px;
   }
 
   .banner-texto h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .banner-texto h3 {
@@ -138,8 +165,34 @@
   .banner-texto p {
     font-size: 0.9rem;
   }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.9s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .banner-petro {
-    width: 80px;
-  }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.9s ease-out;
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.9s ease-out;
+}
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
 }
