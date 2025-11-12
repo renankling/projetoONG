@@ -3,80 +3,97 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Projeto Uçá{% endblock %}</title>
+
   {% load static %}
 
+  <link rel="stylesheet" href="{% static 'css/base/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'img/Logo icon.png' %}">
 
-    <link rel="stylesheet" href="../static/css/base/reset.css">
-    <link rel="stylesheet" href="../static/css/base/header.css">
-    <link rel="stylesheet" href="../static/css/base/footer.css">
-    <link rel="icon" type="image/x-icon" href="../static/img/Logo icon.png">  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+  {% block head %}{% endblock %}
 </head>
 
- <header class="topo">
+<body>
+
+
+  <header class="topo">
     <div class="logo">
       <a href="{% url 'home' %}">
-      <img src="../static/img/logoheader.png" alt="Logo Projeto Uçá" href="{% url 'noticias_list' %}">
+        <img src="{% static 'img/logoheader.png' %}" alt="Logo Projeto Uçá">
       </a>
     </div>
+
     <nav class="menu">
       <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">Guardiões do Mar</a>
       <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
     </nav>
   </header>
-  
 
-<body>
+
   {% block content %}{% endblock %}
-</body>
 
-<footer class="rodape">
-  <div class="rodape-info">
-<div class="coluna logo-coluna">
-<div class="logo-dupla">
-  <a href="{% url 'home' %}" target="_blank" rel="noopener noreferrer">
-    <img src="../static/img/logoheader.png" alt="Logo Projeto Uçá" class="logo-uca">
-  </a>
-  <a href="https://petrobras.com.br/" target="_blank" rel="noopener noreferrer">
-    <img src="../static/img/petrobras.png" alt="Logo Petrobras" class="logo-petrobras">
-  </a>
-</div>
-  <div class="coluna-info">
-    <p><strong>CNPJ:</strong> 02.643.111/0001-21</p>
-    <p><strong>Endereço:</strong><br>
-      <a href="https://www.google.com/maps/place/R.+Alfredo+Azamor,+739+-+Boa+Vista,+S%C3%A3o+Gon%C3%A7alo+-+RJ" target="_blank" rel="noopener noreferrer">
-        R. Alfredo Azamor, 739 - Boa Vista - São Gonçalo 
-      </a>
-    </p>
-  </div>
-  <div class="logos-apoio">
-    <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">
-      <img src="../static/img/logo-guardioes-mar-branco-horitonzal-300x72.png" alt="Logo Guardiões do Mar" class="logo-guardioes">
-    </a>
-  </div>
-</div>
-    <div class="coluna">
-      <h3>Sobre</h3>
-      <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
-      <a href="{% url 'voluntario_form' %}">Seja um voluntário</a>
-      <a href="{% url 'noticias_list' %}">Notícias</a>
+
+  <footer class="rodape">
+    <div class="rodape-info">
+
+      <div class="coluna logo-coluna">
+        <div class="logo-dupla">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'img/logoheader.png' %}" alt="Logo Projeto Uçá" class="logo-uca">
+          </a>
+          <a href="https://petrobras.com.br/" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/petrobras.png' %}" alt="Logo Petrobras" class="logo-petrobras">
+          </a>
+        </div>
+
+        <div class="coluna-info">
+          <p><strong>CNPJ:</strong> 02.643.111/0001-21</p>
+          <p><strong>Endereço:</strong><br>
+            <a href="https://www.google.com/maps/place/R.+Alfredo+Azamor,+739+-+Boa+Vista,+S%C3%A3o+Gon%C3%A7alo+-+RJ" target="_blank" rel="noopener noreferrer">
+              R. Alfredo Azamor, 739 - Boa Vista - São Gonçalo
+            </a>
+          </p>
+        </div>
+
+        <div class="logos-apoio">
+          <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/logo-guardioes-mar-branco-horitonzal-300x72.png' %}" alt="Logo Guardiões do Mar" class="logo-guardioes">
+          </a>
+        </div>
+      </div>
+
+      <div class="coluna">
+        <h3>Sobre</h3>
+        <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
+        <a href="{% url 'voluntario_form' %}">Seja um voluntário</a>
+        <a href="{% url 'noticias_list' %}">Notícias</a>
+      </div>
+
+      <div class="coluna">
+        <h3>Trilhas</h3>
+        <a href="https://guardioesdomar.org.br/trilhas/comunidades-tradicionais/">Comunidades tradicionais</a>
+        <a href="https://guardioesdomar.org.br/trilhas/educacao-ambiental/">Educação ambiental</a>
+        <a href="https://guardioesdomar.org.br/trilhas/juventude-guardia/">Juventude guardiã</a>
+        <a href="https://guardioesdomar.org.br/trilhas/producao-cientifica/">Produção científica</a>
+        <a href="https://guardioesdomar.org.br/trilhas/restauracao-florestal/">Restauração florestal</a>
+      </div>
+
+      <div class="coluna">
+        <h3>Contatos</h3>
+        <p><strong>Telefone:</strong> <a href="tel:2126058016">(21) 2605-8016</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/projetouca" target="_blank">@projetouca</a></p>
+        <p><strong>E-mail:</strong><br> 
+          <a href="mailto:guardioesdomar@guardioesdomar.org.br" target="_blank">guardioesdomar@guardioesdomar.org.br</a>
+        </p>
+      </div>
     </div>
-    <div class="coluna">
-      <h3>Trilhas</h3>
-      <a href="https://guardioesdomar.org.br/trilhas/comunidades-tradicionais/">Comunidades tradicionais</a>
-      <a href="https://guardioesdomar.org.br/trilhas/educacao-ambiental/">Educação ambiental</a>
-      <a href="https://guardioesdomar.org.br/trilhas/juventude-guardia/">Juventude guardiã</a>
-      <a href="https://guardioesdomar.org.br/trilhas/producao-cientifica/">Produção científica</a>
-      <a href="https://guardioesdomar.org.br/trilhas/restauracao-florestal/">Restauração florestal</a>
-    </div>
-    <div class="coluna">
-      <h3>Contatos</h3>
-      <p><strong>Telefone:</strong> <a href="tel:2126058016" target="_blank" rel="noopener noreferrer">(21) 2605-8016</a></p>
-      <p><strong>Instagram:<a href="https://www.instagram.com/projetouca" target="_blank" rel="noopener noreferrer"> @projetouca</a></strong></a></p>
-      <p><strong>E-mail:</strong><br> <a href="mailto:guardioesdomar@guardioesdomar.org.br" target="_blank" rel="noopener noreferrer"> guardioesdomar@guardioesdomar.org.br</a></p>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+</body>
 </html>

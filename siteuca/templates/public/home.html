@@ -1,26 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home/body.css' %}">
+{% endblock %}
 
 {% block content %}
-<head>
-    <link rel="stylesheet" href="../../static/css/home/body.css">
-</head>
-
-<body>
-    <section class="banner">
-        <div class="overlay">
-            <div class="conteudo">
-
-                <h1>Projeto UÇÁ</h1>
-                <h3>Fase IV (2012-2024)</h3>
+<section class="banner">
+    <div class="overlay">
+        <div class="conteudo">
+            <h1>Projeto UÇÁ</h1>
+            <h3>Fase IV (2012-2024)</h3>
             <p>
-            Iniciado em julho de 2012, o Projeto Uçá entra em sua quarta fase atuando em quatro eixos temáticos.
-            Seu principal objetivo é a conservação dos manguezais, aliada à promoção de educação ambiental crítica,
-            à geração de conhecimento científico e à democratização do saber sobre os ambientes costeiros marinhos.
+                Iniciado em julho de 2012, o Projeto Uçá entra em sua quarta fase atuando em quatro eixos temáticos.
+                Seu principal objetivo é a conservação dos manguezais, aliada à promoção de educação ambiental crítica,
+                à geração de conhecimento científico e à democratização do saber sobre os ambientes costeiros marinhos.
             </p>
-      <p><strong>Financiador:</strong> Patrocínio Petrobras.</p>
+            <p><strong>Financiador:</strong> Patrocínio Petrobras.</p>
         </div>
-    
-    </section>
-</body>
-
+    </div>
+</section>
 {% endblock %}
