@@ -1,0 +1,49 @@
+/* Fundo geral da página */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #165f6b; /* azul-petróleo do fundo */
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Seção principal */
+.voluntario-ok {
+  background-color: #0e4b55; /* tom mais escuro para o card */
+  color: white;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 20px;
+  width: 400px;
+  margin: 150px auto; /* centraliza vertical e horizontalmente */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.voluntario-ok h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.voluntario-ok p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Botão */
+.voluntario-ok a {
+  display: inline-block;
+  background-color: #1b9bb4; /* azul mais claro do botão */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover */
+.voluntario-ok a:hover {
+  background-color: #15859a;
+}
