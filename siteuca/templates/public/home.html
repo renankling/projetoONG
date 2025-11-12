@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="{% static 'css/home/body.css' %}">
 <link rel="stylesheet" href="{% static 'css/home/noticias.css' %}">
 <link rel="stylesheet" href="{% static 'css/home/trilhas.css' %}">
-<script src="{% static 'js/scrollReveal.js' %}"></script>
 {% endblock %}
 
 {% block content %}
+
 <section class="banner reveal">
   <div class="overlay"></div>
 
@@ -32,7 +32,6 @@
   </div>
 </section>
 
-
 <section class="noticias-pagina reveal">
   <div class="noticias-header reveal">
     <h1>Últimas Notícias</h1>
@@ -40,7 +39,7 @@
   </div>
 
   <div class="noticias-grid">
-    <div class="noticia-card reveal-right">
+    <div class="noticia-card reveal">
       <img src="{% static 'img/noticias/imagemntc1.png' %}" alt="Imagem da notícia 1">
       <div class="noticia-detalhe">
         <h2>Mutirão de limpeza nos manguezais</h2>
@@ -49,7 +48,7 @@
       </div>
     </div>
 
-    <div class="noticia-card reveal-right">
+    <div class="noticia-card reveal">
       <img src="{% static 'img/noticias/imagemntc2.png' %}" alt="Imagem da notícia 2">
       <div class="noticia-detalhe">
         <h2>Parceria amplia ações de educação ambiental</h2>
@@ -58,7 +57,7 @@
       </div>
     </div>
 
-    <div class="noticia-card reveal-right">
+    <div class="noticia-card reveal">
       <img src="{% static 'img/noticias/imagemntc3.png' %}" alt="Imagem da notícia 3">
       <div class="noticia-detalhe">
         <h2>Aumento da biodiversidade no estuário</h2>
@@ -73,31 +72,58 @@
   </div>
 </section>
 
-
 <section class="trilhas reveal">
   <h2>Trilhas em Quadrinhos</h2>
+
   <div class="trilhas-container">
-    <div class="trilha-card">
+    <div class="trilha-card reveal">
       <img src="{% static 'img/trilhas/anais-seminario-redagua.jpg' %}" alt="Trilha 1">
       <h3>Seminário de Educação Ambiental Redágua</h3>
       <a href="#" class="trilha-btn">Ler História</a>
     </div>
 
-    <div class="trilha-card">
+    <div class="trilha-card reveal">
       <img src="{% static 'img/trilhas/Manual-de-Restauracao-Florestal-De-Manguezais.png' %}" alt="Trilha 2">
       <h3>Manual de Restauração Florestal de Manguezais</h3>
       <a href="#" class="trilha-btn">Ler História</a>
     </div>
 
-    <div class="trilha-card">
+    <div class="trilha-card reveal">
       <img src="{% static 'img/trilhas/Praticas-de-Educacao-Ambiental-4.png' %}" alt="Trilha 3">
       <h3>Práticas de Educação Ambiental 4</h3>
       <a href="#" class="trilha-btn">Ler História</a>
     </div>
   </div>
 
-  <div class="ver-mais-container">
+  <div class="ver-mais-container reveal">
     <a href="#" class="banner-btn">Ver todas as trilhas</a>
   </div>
 </section>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const reveals = document.querySelectorAll(".reveal, .reveal-right, .reveal-left");
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      const revealPoint = 100;
+
+      reveals.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add("active");
+        } else {
+          element.classList.remove("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  });
+</script>
 {% endblock %}
