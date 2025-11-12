@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/home/body.css' %}">
+<link rel="stylesheet" href="{% static 'css/home/noticias.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -28,7 +29,7 @@
     </div>
   </div>
 </section>
-<section class="noticias">
+<section>
     {% include 'public/noticias_preview.html' %}
 
 <div class="ver-mais-container">
