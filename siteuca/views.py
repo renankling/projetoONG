@@ -36,6 +36,10 @@ class VoluntarioCreateView(CreateView):
     template_name = "public/voluntario_form.html"
     success_url = reverse_lazy("voluntario_ok")
 
+def trilhas(request):
+    return render(request, "public/trilhas.html")
+
+
     def form_valid(self, form):
         projeto = Projeto.objects.first()
         if not projeto:
