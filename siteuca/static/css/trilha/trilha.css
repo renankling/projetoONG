@@ -1,0 +1,104 @@
+.trilhas-banner {
+  position: relative;
+  background: url("../../img/mangue-banner.jpg") center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.trilhas-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.trilhas-banner .banner-conteudo {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.trilhas-banner h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+.trilhas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.trilha-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trilha-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.trilha-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.trilha-info {
+  padding: 20px;
+}
+
+.trilha-info h2 {
+  font-size: 1.3em;
+  color: #1d4d4f;
+  margin-bottom: 10px;
+}
+
+.trilha-info p {
+  color: #444;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+.trilha-btn {
+  display: inline-block;
+  background: #1d4d4f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.trilha-btn:hover {
+  background: #277a7c;
+}
+
+/* Animações de revelação */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.9s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .trilhas-lista {
+    flex-direction: column;
+    align-items: center;
+  }
+}
