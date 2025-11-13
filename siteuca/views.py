@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Noticia, Integrante, Voluntario, Projeto
+from .models import Noticia, Integrante, Voluntario, Projeto,Trilha
 from .forms import VoluntarioForm
 
 def home(request):
@@ -36,8 +36,10 @@ class VoluntarioCreateView(CreateView):
     template_name = "public/voluntario_form.html"
     success_url = reverse_lazy("voluntario_ok")
 
-def trilhas(request):
-    return render(request, "public/trilhas.html")
+class TrilhaListView(ListView):
+    model = Trilha
+    template_name = "public/trilhas.html"
+    context_object_name = "trilhas"
 
 
     def form_valid(self, form):

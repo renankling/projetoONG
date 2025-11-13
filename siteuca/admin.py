@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import Projeto, Integrante, Noticia, Voluntario
+from .models import Projeto, Integrante, Noticia, Voluntario, Trilha
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
@@ -28,3 +28,11 @@ class VoluntarioAdmin(admin.ModelAdmin):
     list_display = ("id", "nome", "email", "projeto", "criado_em")
     search_fields = ("nome", "email")
     list_filter = ("projeto",)
+
+@admin.register(Trilha)
+class TrilhasAdmin(admin.ModelAdmin):
+    list_display = ("id", "titulo", "projeto", "data_publicacao")
+    search_fields = ("titulo", "projeto__nome")
+    list_filter = ("projeto", "data_publicacao")
+    ordering = ("-data_publicacao",)
+    date_hierarchy = "data_publicacao"

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from siteuca import views
 from django.contrib.auth import views as auth_views
-from siteuca.views import (VoluntarioCreateView, VoluntarioOKView, trilhas,)
+from siteuca.views import (VoluntarioCreateView, VoluntarioOKView, TrilhaListView,)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,7 +31,7 @@ urlpatterns = [
     path("integrantes/", views.IntegranteListView.as_view(), name="integrantes_list"),
     path("voluntarie-se/", VoluntarioCreateView.as_view(), name="voluntario_form"),
     path("voluntarie-se/obrigado/", VoluntarioOKView.as_view(), name="voluntario_ok"),
-    path("trilhas/", trilhas, name="trilhas"),
+    path("trilhas/", TrilhaListView.as_view(), name="trilhas"),
 
 
 ]

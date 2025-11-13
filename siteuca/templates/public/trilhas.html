@@ -1,81 +1,24 @@
-<<<<<<< HEAD
 {% extends "base.html" %}
-{% load static %}
-
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/trilha/trilha.css' %}">
-{% endblock %}
+{% block title %}Trilhas{% endblock %}
 
 {% block content %}
-<section class="trilhas-banner reveal">
-  <div class="overlay"></div>
-  <div class="banner-conteudo">
-    <h1>Trilhas em Quadrinhos</h1>
-    <p>
-      Explore histórias educativas sobre a conservação dos manguezais,
-      sustentabilidade e o impacto positivo do Projeto Uçá nas comunidades.
-    </p>
-  </div>
-</section>
+<section class="trilhas">
+  <h1>Trilhas</h1>
 
-<section class="trilhas-lista reveal">
-  <div class="trilha-card reveal-right">
-    <img src="{% static 'img/trilhas/anais-seminario-redagua.jpg' %}" alt="Trilha 1">
-    <div class="trilha-info">
-      <h2>Seminário de Educação Ambiental Redágua</h2>
-      <p>Uma jornada de aprendizado e conscientização sobre a importância da água e dos ecossistemas costeiros.</p>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
-  </div>
-
-  <div class="trilha-card reveal-right">
-    <img src="{% static 'img/trilhas/Manual-de-Restauracao-Florestal-De-Manguezais.png' %}" alt="Trilha 2">
-    <div class="trilha-info">
-      <h2>Manual de Restauração Florestal de Manguezais</h2>
-      <p>Descubra as práticas sustentáveis utilizadas para restaurar as florestas de mangue em nosso litoral.</p>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
-  </div>
-
-  <div class="trilha-card reveal-right">
-    <img src="{% static 'img/trilhas/Praticas-de-Educacao-Ambiental-4.png' %}" alt="Trilha 3">
-    <div class="trilha-info">
-      <h2>Práticas de Educação Ambiental 4</h2>
-      <p>Atividades interativas que promovem o engajamento e a conscientização sobre a preservação ambiental.</p>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
+  <div class="grid">
+    {% for trilha in trilhas %}
+      <article class="card-noticia">
+        {% if trilha.imagem %}
+          <img src="{{ trilhas.imagem.url }}" alt="{{ trilha.titulo }}">
+        {% endif %}
+        <h3>{{ trilha.titulo }}</h3>
+        {% if trilha.link_externo %}
+          <a href="{{ trilha.link_externo }}" target="_blank" class="btn-link">Ler trilha</a>
+        {% endif %}
+      </article>
+    {% empty %}
+      <p>Nenhuma trilha cadastrada.</p>
+    {% endfor %}
   </div>
 </section>
 {% endblock %}
-
-{% block scripts %}
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const reveals = document.querySelectorAll(".reveal, .reveal-right");
-
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
-      const revealPoint = 100;
-
-      reveals.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - revealPoint) {
-          element.classList.add("active");
-        } else {
-          element.classList.remove("active");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-  });
-</script>
-{% endblock %}
-=======
-<h1>
-    trilhas
-    
-</h1>
->>>>>>> 57066e7eb1d53b60dd83095f09aec4a6936c77ad
