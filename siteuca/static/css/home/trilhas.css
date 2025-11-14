@@ -3,23 +3,37 @@
   padding: 80px 40px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.9s ease;
+  overflow: hidden; /* evita quebra visual */
 }
 
+/* --- Animação suave --- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Título suave --- */
 .trilhas h2 {
   font-size: 2.5rem;
   color: #024959;
-  margin-bottom: 10px;
-  transition: color 0.4s ease;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+  transition: color 0.9s ease;
 }
 
+/* --- Parágrafo suave --- */
 .trilhas p {
   font-size: 1.1rem;
   color: #555;
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.6;
-  transition: color 0.3s ease;
+  animation: fadeInDown 1.3s ease forwards;
+  opacity: 0;
+  transition: color 0.9s ease;
 }
 
 .trilhas-container {
@@ -38,7 +52,7 @@
   width: 320px;
   overflow: hidden;
   text-align: left;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.9s ease, box-shadow 0.9s ease;
 }
 
 .trilha-card:hover {
@@ -51,6 +65,7 @@
   height: 200px;
   object-fit: cover;
   transition: transform 0.5s ease;
+  border-bottom: 4px solid #0077b6;
 }
 
 .trilha-card:hover img {
@@ -58,10 +73,10 @@
 }
 
 .trilha-card h3 {
-  margin: 18px 15px 10px;
   color: #024959;
   font-size: 1.3rem;
   transition: color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .trilha-card p {
@@ -71,21 +86,21 @@
   transition: color 0.3s ease;
 }
 
+.trilha-conteudo{
+  padding: 22px;
+  text-align: left;
+}
 
 .trilha-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #037c91, #024959);
-  color: white;
-  padding: 14px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  margin: 30px;
-  margin-left: 80px;
+display: inline-block;
+background: linear-gradient(135deg, #037c91, #024959);
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.3s ease;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .trilha-btn:hover {

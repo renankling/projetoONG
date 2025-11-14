@@ -61,7 +61,10 @@
 </section>
 
 <section class="trilhas reveal">
-  <h2>Trilhas em Quadrinhos</h2>
+  <div class="noticias-header reveal">
+  <h2>Trilhas</h2>
+  </div>
+  
 
   <div class="trilhas-container">
     {% for trilha in trilhas %}
@@ -69,12 +72,14 @@
         {% if trilha.imagem %}
           <img src="{{ trilha.imagem.url }}" alt="{{ trilha.titulo }}">
         {% endif %}
-        <h3>{{ trilha.titulo }}</h3>
+        <div class="trilha-conteudo">
+          <h3>{{ trilha.titulo }}</h3>
         {% if trilha.link_externo %}
           <a href="{{ trilha.link_externo }}" target="_blank" class="trilha-btn">Ler trilha</a>
         {% else %}
           <a href="#" class="trilha-btn">Ler História</a>
         {% endif %}
+        </div>
       </div>
     {% empty %}
       <p>Nenhuma trilha cadastrada.</p>

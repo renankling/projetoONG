@@ -66,20 +66,25 @@
 
 /* BOTÃO */
 .btn-trilha {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #0077b6;
-  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #037c91, #024959);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 10px;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s, transform 0.2s;
-  font-weight: 500;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin: 30px;
+  margin-left: 80px;
 }
 
 .btn-trilha:hover {
-  background-color: #005f8f;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #049cb1, #036278);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* MENSAGEM DE NENHUMA TRILHA */
