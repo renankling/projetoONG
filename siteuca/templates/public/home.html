@@ -39,32 +39,20 @@
   </div>
 
   <div class="noticias-grid">
-    <div class="noticia-card reveal">
-      <img src="{% static 'img/noticias/imagemntc1.png' %}" alt="Imagem da notícia 1">
-      <div class="noticia-detalhe">
-        <h2>Mutirão de limpeza nos manguezais</h2>
-        <p>Voluntários se reuniram para recolher resíduos e conscientizar a comunidade sobre a preservação dos ecossistemas costeiros.</p>
-        <a href="#" class="noticia-btn">Leia mais</a>
+    {% for noticia in noticias %}
+      <div class="noticia-card reveal">
+        {% if noticia.imagem %}
+          <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
+        {% endif %}
+        <div class="noticia-detalhe">
+          <h2>{{ noticia.titulo }}</h2>
+          <p>{{ noticia.resumo }}</p>
+          <a href="{{ noticia.link_externo }}" class="noticia-btn">Leia mais</a>
+        </div>
       </div>
-    </div>
-
-    <div class="noticia-card reveal">
-      <img src="{% static 'img/noticias/imagemntc2.png' %}" alt="Imagem da notícia 2">
-      <div class="noticia-detalhe">
-        <h2>Parceria amplia ações de educação ambiental</h2>
-        <p>O Projeto Uçá firma parceria com instituições locais para expandir atividades de formação e pesquisa em sustentabilidade.</p>
-        <a href="#" class="noticia-btn">Leia mais</a>
-      </div>
-    </div>
-
-    <div class="noticia-card reveal">
-      <img src="{% static 'img/noticias/imagemntc3.png' %}" alt="Imagem da notícia 3">
-      <div class="noticia-detalhe">
-        <h2>Aumento da biodiversidade no estuário</h2>
-        <p>Pesquisas recentes mostram melhorias significativas na fauna e flora das áreas restauradas desde o início do projeto.</p>
-        <a href="#" class="noticia-btn">Leia mais</a>
-      </div>
-    </div>
+    {% empty %}
+      <p>Nenhuma notícia cadastrada.</p>
+    {% endfor %}
   </div>
 
   <div class="ver-mais-container reveal">
@@ -76,23 +64,21 @@
   <h2>Trilhas em Quadrinhos</h2>
 
   <div class="trilhas-container">
-    <div class="trilha-card reveal">
-      <img src="{% static 'img/trilhas/anais-seminario-redagua.jpg' %}" alt="Trilha 1">
-      <h3>Seminário de Educação Ambiental Redágua</h3>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
-
-    <div class="trilha-card reveal">
-      <img src="{% static 'img/trilhas/Manual-de-Restauracao-Florestal-De-Manguezais.png' %}" alt="Trilha 2">
-      <h3>Manual de Restauração Florestal de Manguezais</h3>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
-
-    <div class="trilha-card reveal">
-      <img src="{% static 'img/trilhas/Praticas-de-Educacao-Ambiental-4.png' %}" alt="Trilha 3">
-      <h3>Práticas de Educação Ambiental 4</h3>
-      <a href="#" class="trilha-btn">Ler História</a>
-    </div>
+    {% for trilha in trilhas %}
+      <div class="trilha-card reveal">
+        {% if trilha.imagem %}
+          <img src="{{ trilha.imagem.url }}" alt="{{ trilha.titulo }}">
+        {% endif %}
+        <h3>{{ trilha.titulo }}</h3>
+        {% if trilha.link_externo %}
+          <a href="{{ trilha.link_externo }}" target="_blank" class="trilha-btn">Ler trilha</a>
+        {% else %}
+          <a href="#" class="trilha-btn">Ler História</a>
+        {% endif %}
+      </div>
+    {% empty %}
+      <p>Nenhuma trilha cadastrada.</p>
+    {% endfor %}
   </div>
 
   <div class="ver-mais-container reveal">

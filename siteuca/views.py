@@ -10,8 +10,13 @@ from .forms import VoluntarioForm
 
 def home(request):
     projeto = Projeto.objects.first()
-    noticias = Noticia.objects.select_related("projeto").all()[:6]
-    return render(request, "public/home.html", {"projeto": projeto, "noticias": noticias})
+    trilhas = Trilha.objects.order_by('-data_publicacao')[:3]
+    noticias = Noticia.objects.order_by('-data_publicacao')[:3]
+    return render(request, "public/home.html", {
+        "projeto": projeto, 
+        "noticias": noticias,
+        "trilhas": trilhas,
+        })
 
 class NoticiaListView(ListView):
     model = Noticia

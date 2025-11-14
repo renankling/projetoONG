@@ -1,104 +1,110 @@
-.trilhas-banner {
-  position: relative;
-  background: url("../../img/mangue-banner.jpg") center/cover no-repeat;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+.trilhas-section {
+  padding: 80px 5%;
+  background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
   text-align: center;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.trilhas-banner .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+.container-trilhas {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.trilhas-banner .banner-conteudo {
-  position: relative;
-  max-width: 800px;
-  padding: 20px;
-}
-
-.trilhas-banner h1 {
-  font-size: 2.8em;
-  margin-bottom: 10px;
-}
-
-.trilhas-lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 60px 20px;
-}
-
-.trilha-card {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 320px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.trilha-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
-}
-
-.trilha-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.trilha-info {
-  padding: 20px;
-}
-
-.trilha-info h2 {
-  font-size: 1.3em;
-  color: #1d4d4f;
-  margin-bottom: 10px;
-}
-
-.trilha-info p {
-  color: #444;
-  font-size: 0.95em;
+.titulo-trilhas {
+  font-size: 2.6rem;
+  color: #024959;
   margin-bottom: 15px;
+  letter-spacing: 0.5px;
 }
 
-.trilha-btn {
+/* GRID DE TRILHAS */
+.grid-trilhas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* CARD DE CADA TRILHA */
+.card-trilha {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card-trilha:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEM */
+.trilha-imagem img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #0077b6;
+}
+
+/* CONTEÚDO */
+.trilha-conteudo {
+  padding: 15px;
+}
+
+.trilha-titulo {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: #222;
+  font-weight: 600;
+}
+
+/* BOTÃO */
+.btn-trilha {
   display: inline-block;
-  background: #1d4d4f;
-  color: white;
+  margin-top: 10px;
   padding: 10px 20px;
-  border-radius: 30px;
+  background-color: #0077b6;
+  color: #fff;
   text-decoration: none;
-  transition: background 0.3s ease;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: 500;
 }
 
-.trilha-btn:hover {
-  background: #277a7c;
+.btn-trilha:hover {
+  background-color: #005f8f;
+  transform: scale(1.05);
 }
 
-/* Animações de revelação */
-.reveal {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: all 0.9s ease-out;
+/* MENSAGEM DE NENHUMA TRILHA */
+.sem-trilhas {
+  font-size: 1.1rem;
+  color: #666;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-  .trilhas-lista {
-    flex-direction: column;
-    align-items: center;
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .trilhas-section {
+    padding: 60px 4%;
+  }
+
+  .trilha-imagem img {
+    height: 180px;
+  }
+
+  .trilha-titulo {
+    font-size: 1.1rem;
   }
 }

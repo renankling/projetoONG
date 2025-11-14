@@ -1,22 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".noticia-card");
+  const reveals = document.querySelectorAll(".reveal, .reveal-right, .reveal-left");
 
-  function revealCards() {
+  function revealOnScroll() {
     const windowHeight = window.innerHeight;
     const revealPoint = 100;
 
-    cards.forEach((card, index) => {
-      const cardTop = card.getBoundingClientRect().top;
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
 
-      if (cardTop < windowHeight - revealPoint && !card.classList.contains("active")) {
-        
-        setTimeout(() => {
-          card.classList.add("active");
-        }, index * 200);
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add("active");
       }
     });
   }
 
-  window.addEventListener("scroll", revealCards);
-  revealCards();
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 });
