@@ -1,6 +1,19 @@
 # siteuca/models.py
 from django.conf import settings
 from django.db import models
+from django.core.validators import RegexValidator
+
+
+telefone_validator = RegexValidator(
+    regex=r'^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$',
+    message="Digite um telefone válido. Ex: (21) 98765-4321"
+)
+
+
+nome_validator = RegexValidator(
+    regex=r'^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$',
+    message="O nome deve conter apenas letras e espaços."
+)
 
 class Projeto(models.Model):
     nome = models.CharField(max_length=120)
@@ -37,7 +50,7 @@ class Voluntario(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="voluntarios")
     nome = models.CharField(max_length=120)
     email = models.EmailField(max_length=100,blank=False)
-    telefone = models.CharField(max_length=30, blank=False)
+    telefone = models.CharField(max_length=15, blank=False, validators=[telefone_validator])
     endereco = models.CharField(max_length=255, blank=False) 
     mensagem = models.TextField(blank=True)
     criado_em = models.DateTimeField(auto_now_add=True)

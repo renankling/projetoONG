@@ -40,6 +40,15 @@ class VoluntarioCreateView(CreateView):
     form_class = VoluntarioForm
     template_name = "public/voluntario_form.html"
     success_url = reverse_lazy("voluntario_ok")
+    def form_valid(self, form):
+        projeto = Projeto.objects.first()
+        if projeto is None:
+            projeto = Projeto.objects.create(
+                nome="Projeto Uçá",
+                descricao="Projeto Uçá"
+            )
+        form.instance.projeto = projeto
+        return super().form_valid(form)
 
 class TrilhaListView(ListView):
     model = Trilha
