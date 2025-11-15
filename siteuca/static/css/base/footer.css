@@ -3,19 +3,12 @@
   src: url('../../fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat-Regular', sans-serif;
-}
-
 .rodape {
   background-color: #024959;
   padding: 50px 60px;
   color: #ffffff;
-  margin-top: 0;
-  border-top: 4px solid #024959; 
+  width: 100%;
+  border-top: 4px solid #024959;
 }
 
 .rodape-info {
@@ -41,8 +34,6 @@
   transition: 0.3s;
 }
 
-
-
 .coluna a:hover,
 .coluna p:hover {
   text-decoration: underline;
@@ -58,23 +49,14 @@
 
 .logo-uca {
   width: 150px;
+  height: auto;
 }
 
-.coluna-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
 .logo-dupla {
   display: flex;
   align-items: center;
   gap: 25px;
   margin-bottom: -30px;
-}
-
-.logo-uca {
-  width: 150px;
-  height: auto;
 }
 
 .logo-petrobras {
@@ -83,7 +65,6 @@
   opacity: 0.9;
   transition: 0.3s;
 }
-
 .logo-petrobras:hover {
   opacity: 1;
 }
@@ -92,4 +73,62 @@
   width: 220px;
   height: auto;
   margin-top: -19px;
+}
+
+@media (max-width: 600px) {
+  .rodape {
+    padding: 40px 25px;
+  }
+
+  .rodape-info {
+    gap: 30px;
+  }
+
+  .coluna h3 {
+    font-size: 1.1rem;
+  }
+
+  .coluna p,
+  .coluna a {
+    font-size: 0.6rem;
+  }
+
+  .logo-uca {
+    width: 120px;
+  }
+
+  .logo-petrobras {
+    width: 70px;
+  }
+
+  .logo-guardioes {
+    width: 180px;
+    margin-top: -10px;
+  }
+
+  .logo-dupla {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .rodape {
+    padding: 45px 35px;
+  }
+
+  .rodape-info {
+    gap: 40px;
+  }
+
+  .logo-dupla {
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rodape {
+    padding: 60px 120px;
+  }
 }

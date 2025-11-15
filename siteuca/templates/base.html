@@ -21,8 +21,13 @@
 
 <body>
 
-
   <header class="topo">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="logo">
       <a href="{% url 'home' %}">
         <img src="{% static 'img/logoheader.png' %}" alt="Logo Projeto Uçá">
@@ -36,9 +41,13 @@
     </nav>
   </header>
 
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">Guardiões do Mar</a>
+    <a href="{% url 'noticias_list' %}">Notícias</a>
+    <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
+  </nav>
 
   {% block content %}{% endblock %}
-
 
   <footer class="rodape">
     <div class="rodape-info">
@@ -97,7 +106,17 @@
   </footer>
 
   <script src="{% static 'js/scrollReveal.js' %}"></script>
-  {% block scripts %}{% endblock %}
 
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menuMobile = document.getElementById("menu-mobile");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    menuMobile.classList.toggle("active");
+  });
+</script>>
+
+  {% block scripts %}{% endblock %}
 </body>
 </html>
