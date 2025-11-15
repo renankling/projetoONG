@@ -12,9 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rpugqh*md7a2-*wb)!sqp1bpx1u&kt)=r6osq5!5b%ll4wgt%t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["renankling.pythonanywhere.com"]
+
 
 
 # Application definition
@@ -112,15 +113,16 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 
 
 
-import os
+
 TEMPLATES[0]["DIRS"] = [os.path.join(BASE_DIR, "siteuca", "templates")]
 STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "siteuca", "static")]
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/dashboard/"
