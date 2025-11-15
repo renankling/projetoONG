@@ -205,6 +205,14 @@ body {
   .trilhas-section {
     padding: 50px 30px;
   }
+    .rodape-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-coluna {
+    align-items: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -222,5 +230,8 @@ body {
 
   .titulo-trilhas {
     font-size: 1.6rem;
+  }
+    .rodape-info {
+    gap: 25px;
   }
 }

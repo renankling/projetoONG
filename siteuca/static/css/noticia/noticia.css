@@ -199,6 +199,15 @@ body {
   .banner h2 {
     font-size: 2rem;
   }
+  .rodape-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-coluna {
+    align-items: center;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -212,5 +221,8 @@ body {
 
   .banner h2 {
     font-size: 1.7rem;
+  }
+  .rodape-info {
+    gap: 25px;
   }
 }

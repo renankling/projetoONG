@@ -246,3 +246,21 @@ body {
     font-size: 0.9rem;
   }
 }
+
+
+@media (max-width: 900px) {
+  .rodape-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-coluna {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .rodape-info {
+    gap: 25px;
+  }
+}

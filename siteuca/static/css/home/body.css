@@ -145,6 +145,24 @@
   }
 }
 
+@media (max-width: 900px) {
+  .rodape-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-coluna {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .rodape-info {
+    gap: 25px;
+  }
+}
+
+
 @media (max-width: 480px) {
   .banner-imagem img:first-child {
     width: 60px;
