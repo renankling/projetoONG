@@ -26,7 +26,7 @@
         Seu principal objetivo é a conservação dos manguezais, aliada à promoção de educação ambiental crítica,
         à geração de conhecimento científico e à democratização do saber sobre os ambientes costeiros marinhos.
       </p>
-      <p><strong>Financiador:</strong> Patrocínio Petrobras.</p>
+      <p><strong>Financiador: Petrobras</strong></p>
       <a href="{% url 'voluntario_form' %}" class="banner-btn">Voluntarie-se</a>
     </div>
   </div>
@@ -35,7 +35,7 @@
 <section class="noticias-pagina reveal">
   <div class="noticias-header reveal">
     <h1>Últimas Notícias</h1>
-    <p>Confira as ações mais recentes do Projeto Uçá.</p>
+    <p>Confira as ações mais recentes do Projeto Uçá</p>
   </div>
 
   <div class="noticias-grid">
@@ -47,7 +47,7 @@
         <div class="noticia-detalhe">
           <h2>{{ noticia.titulo }}</h2>
           <p>{{ noticia.resumo }}</p>
-          <a href="{{ noticia.link_externo }}" class="noticia-btn">Leia mais</a>
+          <a href="{{ noticia.link_externo }}" class="noticia-btn">Ler notícia</a>
         </div>
       </div>
     {% empty %}
@@ -63,6 +63,7 @@
 <section class="trilhas reveal">
   <div class="noticias-header reveal">
   <h2>Trilhas</h2>
+  <p>Confira as trilhas de conhecimento do Projeto Uçá</p>
   </div>
   
 
@@ -94,27 +95,4 @@
 {% endblock %}
 
 
-{% block scripts %}
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const reveals = document.querySelectorAll(".reveal, .reveal-right, .reveal-left");
 
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
-      const revealPoint = 100;
-
-      reveals.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - revealPoint) {
-          element.classList.add("active");
-        } else {
-          element.classList.remove("active");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-  });
-</script>
-{% endblock %}

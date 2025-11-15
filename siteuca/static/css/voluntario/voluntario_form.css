@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Montserrat-Regular';
-  src: url('fontes/Montserrat/Montserrat-Regular.ttf');
+  src: url('../../fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
 * {
@@ -67,7 +67,7 @@ body {
 }
 
 .btn-enviar {
-  background-color: #007b8a;
+  background: linear-gradient(135deg, #037c91, #024959);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -80,7 +80,9 @@ body {
 }
 
 .btn-enviar:hover {
-  background-color: #009fb8;
+  background: linear-gradient(135deg, #049cb1, #036278);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .info-lateral {
@@ -127,3 +129,120 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .voluntario-container {
+    padding: 60px 40px;
+    gap: 30px;
+  }
+
+  .formulario h2 {
+    font-size: 1.8rem;
+  }
+
+  .video-box iframe {
+    height: 360px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; 
+  }
+
+  .voluntario-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 40px 20px;
+  }
+
+  .formulario,
+  .info-lateral {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .formulario {
+    padding: 24px 18px;
+  }
+
+  .formulario h2 {
+    font-size: 1.6rem;
+  }
+
+  .formulario h3 {
+    font-size: 1rem;
+  }
+
+  .video-box {
+    max-width: 100%;
+  }
+
+  .video-box iframe {
+    height: auto;
+    aspect-ratio: 16 / 9; 
+  }
+}
+
+@media (max-width: 480px) {
+  .voluntario-container {
+    padding: 30px 12px;
+  }
+
+  .formulario {
+    padding: 20px 14px;
+  }
+
+  .formulario h2 {
+    font-size: 1.4rem;
+  }
+
+  .formulario label {
+    font-size: 0.9rem;
+  }
+
+  .btn-enviar {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .caixa-info {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+}

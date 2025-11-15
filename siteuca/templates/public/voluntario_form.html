@@ -4,12 +4,18 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/voluntario/voluntario_form.css' %}">
-  <main class="voluntario-container">
-    <div class="formulario">
+
+  <!-- Container principal com animação -->
+  <main class="voluntario-container reveal">
+
+    <!-- Formulário entra pela esquerda -->
+    <div class="formulario reveal-left">
       <h2>Voluntarie-se</h2>
       <h3>Registre-se para voluntariar-se!</h3>
+
       <form action="#" method="POST">
         {% csrf_token %}
+
         <label for="{{ form.nome.id_for_label }}">Nome</label>
         {{ form.nome }}
 
@@ -26,16 +32,20 @@
         {{ form.mensagem }}
 
         <button type="submit" class="btn-enviar">Enviar</button>
-            {% if form.errors %}
-      <div class="erros">
-        <p>Verifique os campos destacados.</p>
-        {{ form.errors }}
-      </div>
-    {% endif %}
+
+        {% if form.errors %}
+        <div class="erros reveal">
+          <p>Verifique os campos destacados.</p>
+          {{ form.errors }}
+        </div>
+        {% endif %}
       </form>
     </div>
-    <div class="info-lateral">
-      <div class="caixa-info">
+
+    <!-- Informações laterais + vídeo entram pela direita -->
+    <div class="info-lateral reveal-right">
+      
+      <div class="caixa-info reveal-right">
         <p><strong>Informações adicionais ou dúvidas:</strong><br>
           <a href="mailto:guardioesdomar@guardioesdomar.org.br">guardioesdomar@guardioesdomar.org.br</a></p>
 
@@ -45,7 +55,8 @@
         <p><strong>Banco de oportunidades:</strong><br>
           <a href="mailto:rh@guardioesdomar.org.br">rh@guardioesdomar.org.br</a></p>
       </div>
-      <div class="video-box">
+
+      <div class="video-box reveal-right">
         <iframe
           src="https://www.youtube-nocookie.com/embed/SfJIFbAovC4?rel=0"
           title="Vídeo Projeto Uçá"
@@ -55,6 +66,8 @@
           allowfullscreen
         ></iframe>
       </div>
+
     </div>
+
   </main>
 {% endblock %}

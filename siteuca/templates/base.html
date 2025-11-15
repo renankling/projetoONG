@@ -38,14 +38,17 @@
       <a href="{% url 'noticias_list' %}">Notícias</a>
       <a href="{% url 'trilhas'%}">Trilhas</a>
       <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
+      <a href="{% url 'voluntario_form' %}">Seja um voluntário</a>
       <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">Guardiões do Mar</a>
     </nav>
   </header>
 
   <nav class="menu-mobile" id="menu-mobile">
-    <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">Guardiões do Mar</a>
     <a href="{% url 'noticias_list' %}">Notícias</a>
+    <a href="{% url 'trilhas'%}">Trilhas</a>
+    <a href="{% url 'voluntario_form'%}">Voluntarie-se</a>
     <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
+    <a href="https://guardioesdomar.org.br/" target="_blank" rel="noopener noreferrer">Guardiões do Mar</a>
   </nav>
 
   {% block content %}{% endblock %}
@@ -64,7 +67,7 @@
         </div>
 
         <div class="coluna-info">
-          <p><strong>CNPJ:</strong> 02.643.111/0001-21</p>
+          <p><strong>CNPJ:</strong> 02.483.111/0001-21</p>
           <p><strong>Endereço:</strong><br>
             <a href="https://www.google.com/maps/place/R.+Alfredo+Azamor,+739+-+Boa+Vista,+S%C3%A3o+Gon%C3%A7alo+-+RJ" target="_blank" rel="noopener noreferrer">
               R. Alfredo Azamor, 739 - Boa Vista - São Gonçalo
@@ -81,18 +84,12 @@
 
       <div class="coluna">
         <h3>Sobre</h3>
+        <a href="{% url 'noticias_list' %}">Notícias</a>
+        <a href="{% url 'trilhas' %}">Trilhas</a>
         <a href="{% url 'integrantes_list' %}">Conheça a equipe</a>
         <a href="{% url 'voluntario_form' %}">Seja um voluntário</a>
-        <a href="{% url 'noticias_list' %}">Notícias</a>
-      </div>
-
-      <div class="coluna">
-        <h3>Trilhas</h3>
-        <a href="https://guardioesdomar.org.br/trilhas/comunidades-tradicionais/">Comunidades tradicionais</a>
-        <a href="https://guardioesdomar.org.br/trilhas/educacao-ambiental/">Educação ambiental</a>
-        <a href="https://guardioesdomar.org.br/trilhas/juventude-guardia/">Juventude guardiã</a>
-        <a href="https://guardioesdomar.org.br/trilhas/producao-cientifica/">Produção científica</a>
-        <a href="https://guardioesdomar.org.br/trilhas/restauracao-florestal/">Restauração florestal</a>
+        <a href="https://guardioesdomar.org.br/">Guardiões do Mar</a>
+        
       </div>
 
       <div class="coluna">
@@ -106,7 +103,6 @@
     </div>
   </footer>
 
-  <script src="{% static 'js/scrollReveal.js' %}"></script>
 
 <script>
   const hamburger = document.getElementById("hamburger");
@@ -118,6 +114,29 @@
   });
 </script>
 
-  {% block scripts %}{% endblock %}
+  {% block scripts %}
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const reveals = document.querySelectorAll(".reveal, .reveal-right, .reveal-left");
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      const revealPoint = 100;
+
+      reveals.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add("active");
+        } else {
+          element.classList.remove("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  });
+</script>
+  {% endblock %}
 </body>
 </html>

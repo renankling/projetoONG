@@ -31,10 +31,32 @@
   font-weight: bold;
   margin-left: 30px;
   text-decoration: none;
+  position: relative;             
+  padding-bottom: 4px;           
+  transition: color 0.25s ease;   
 }
 
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #8bd6e0;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+
 .menu a:hover {
-  text-decoration: underline;
+  color: #e0f7fb;
+  text-decoration: none;         
+}
+
+.menu a:hover::after {
+  width: 100%;                 
 }
 
 a,
@@ -98,6 +120,31 @@ a:active {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
+  position: relative;
+  padding-bottom: 3px;
+  width: fit-content;  
+  transition: color 0.25s ease;
+}
+
+.menu-mobile a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #8bd6e0;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.menu-mobile a:hover {
+  color: #e0f7fb;
+  text-decoration: none;
+}
+
+.menu-mobile a:hover::after {
+  width: 100%;
 }
 
 .menu-mobile.active {

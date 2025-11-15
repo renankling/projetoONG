@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block title %}Trilhas{% endblock %}
 {% load static %}
 
@@ -8,16 +7,16 @@
 <link rel="stylesheet" href="{% static 'css/trilha/trilha.css' %}">
 {% endblock %}
 
-
 {% block content %}
 
-<section class="banner">
+
+<section class="banner reveal">
   <div class="banner-overlay">
     <h2>Trilhas de conhecimento</h2>
   </div>
 </section>
 
-<section class="trilhas-section">
+<section class="trilhas-section reveal">
   <div class="container-trilhas">
 
     <h1 class="titulo-trilhas">Trilhas</h1>
@@ -25,7 +24,7 @@
     <div class="grid-trilhas">
 
       {% for trilha in trilhas %}
-      <article class="card-trilha">
+      <article class="card-trilha reveal-right">
 
         {% if trilha.imagem %}
         <div class="trilha-imagem">
@@ -43,7 +42,7 @@
 
       </article>
       {% empty %}
-      <p class="sem-trilhas">Nenhuma trilha cadastrada.</p>
+      <p class="sem-trilhas reveal">Nenhuma trilha cadastrada.</p>
       {% endfor %}
 
     </div>

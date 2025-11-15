@@ -1,34 +1,42 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Integrantes{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/integrantes/integrantes.css' %}">
+{% endblock %}
+
 {% block content %}
-  <head>
-    <link rel="stylesheet" href="{% static 'css/integrantes/integrantes.css' %}">
-  </head>
 
-  <section class="banner">
-    <div class="banner-overlay">
-      <h2>Quem faz o Projeto Uçá acontecer</h2>
-    </div>
-  </section>
 
-  <section class="equipe-container">
-    <div class="grid-equipe">
+<section class="banner reveal">
+  <div class="banner-overlay">
+    <h2>Quem faz o Projeto Uçá acontecer</h2>
+  </div>
+</section>
 
-      {% for integrante in integrantes %}
-        <div class="card">
+
+<section class="equipe-container reveal">
+  <div class="grid-equipe">
+
+    {% for integrante in integrantes %}
+      <div class="card reveal">
+        
         {% if integrante.imagem %}
-        <img src="{{ integrante.imagem.url }}" alt="{{ integrante.nome }}">
+          <img src="{{ integrante.imagem.url }}" alt="{{ integrante.nome }}">
         {% else %}
-        <img src="{% static 'img/default_user.png' %}" alt="{{ integrante.nome }}">
+          <img src="{% static 'img/default_user.png' %}" alt="{{ integrante.nome }}">
         {% endif %}
-          <h3>{{ integrante.nome }}</h3>
-          <p>{{ integrante.funcao }}</p>
-        </div>
-      {% empty %}
-        <p>Nenhum integrante cadastrado ainda.</p>
-      {% endfor %}
 
-    </div>
-  </section>
+        <h3>{{ integrante.nome }}</h3>
+        <p>{{ integrante.funcao }}</p>
+      </div>
+
+    {% empty %}
+      <p class="reveal">Nenhum integrante cadastrado ainda.</p>
+    {% endfor %}
+
+  </div>
+</section>
+
 {% endblock %}

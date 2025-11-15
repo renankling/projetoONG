@@ -9,11 +9,17 @@
   box-sizing: border-box;
   font-family: 'Montserrat-Regular', sans-serif;
 }
+body {
+  background-color: #115F71;
+  color: white;
+  min-height: 100vh;
+}
+
 
 
 .banner {
   position: relative;
-  background: url("../../img/image 13.png") center/cover no-repeat;
+  background: url("../../img/image 19.png") center/cover no-repeat;
   height: 180px;
   display: flex;
   align-items: center;
@@ -154,6 +160,40 @@
   padding: 30px 0;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 
 @media (max-width: 900px) {

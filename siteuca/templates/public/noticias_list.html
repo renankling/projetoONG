@@ -4,28 +4,39 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/noticia/noticia.css' %}">
 
-  <section class="banner">
-    <div class="banner-overlay">
-      <h2>Saiu na imprensa</h2>
-    </div>
-  </section>
 
-<section class="noticias">
+<section class="banner reveal">
+  <div class="banner-overlay">
+    <h2>Saiu na imprensa</h2>
+  </div>
+</section>
+
+
+<section class="noticias reveal">
+
+  <h1 class="titulo-noticia">Notícias</h1>
   <div class="grid">
+    
     {% for noticia in noticias %}
-      <article class="card-noticia">
+      <article class="card-noticia reveal-right">
         {% if noticia.imagem %}
           <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
         {% endif %}
+        
         <h3>{{ noticia.titulo }}</h3>
         <p>{{ noticia.conteudo|truncatechars:180 }}</p>
+        
         {% if noticia.link_externo %}
-          <a href="{{ noticia.link_externo }}" target="_blank" class="btn-link">Ver no portal</a>
+          <a href="{{ noticia.link_externo }}" target="_blank" class="btn-link">
+            Ver no portal
+          </a>
         {% endif %}
       </article>
     {% empty %}
-      <p>Nenhuma notícia cadastrada.</p>
+      <p class="reveal">Nenhuma notícia cadastrada.</p>
     {% endfor %}
+
   </div>
 </section>
+
 {% endblock %}
