@@ -10,7 +10,7 @@
   font-family: 'Montserrat-Regular', sans-serif;
 }
 body {
-  background-color: #115F71;
+  background-color: #ffffff;
   color: white;
   min-height: 100vh;
 }
@@ -108,12 +108,6 @@ body {
 }
 
 
-.trilha-titulo {
-  font-size: 1.3rem;
-  margin: 15px 0;
-  color: #222;
-  font-weight: 600;
-}
 
 
 .btn-trilha {
@@ -151,7 +145,6 @@ body {
   margin-bottom: 15px;
   font-weight: bold;
 }
-
 
 .sem-trilhas {
   text-align: center;
