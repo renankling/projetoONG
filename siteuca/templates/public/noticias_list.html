@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Notícias{% endblock %}
 {% block content %}
-<section class="noticias">
-  <h1>Notícias</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/noticia/noticia.css' %}">
 
+  <section class="banner">
+    <div class="banner-overlay">
+      <h2>Saiu na imprensa</h2>
+    </div>
+  </section>
+
+<section class="noticias">
   <div class="grid">
     {% for noticia in noticias %}
       <article class="card-noticia">

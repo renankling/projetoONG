@@ -11,17 +11,25 @@
 }
 
 
+body {
+  background-color: #f3f7f8;
+  color: #093b4a;
+  min-height: 100vh;
+}
+
+
+
 .banner {
   position: relative;
-  background: url("../../img/image 13.png") center/cover no-repeat;
-  height: 180px;
+  background: url("../../img/image 12.png") center/cover no-repeat;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .banner-overlay {
-  background-color: rgba(0, 0, 0, 0.58); 
+  background-color: rgba(0, 0, 0, 0.65);
   width: 100%;
   height: 100%;
   display: flex;
@@ -31,91 +39,83 @@
 }
 
 .banner h2 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
-  letter-spacing: 1px;
-}
-
-
-.trilhas-section {
-  padding: 60px 40px;
-  background: linear-gradient(180deg, #f9f9f9 0%, #f2f7f8 100%);
-  color: #093b4a;
-  min-height: 100vh;
-}
-
-
-.titulo-trilhas {
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: #024959;
-  margin-bottom: 40px;
-}
-
-
-.container-trilhas {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 
 
-.grid-trilhas {
+.noticias {
+  padding: 60px 40px 60px;
+  background-color: #f3f7f8;
+}
+
+.noticias .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 420px)); 
   gap: 30px;
-  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;   
 }
 
 
 
 
-.card-trilha {
-  background: white;
-  border-radius: 18px;
+.card-noticia {
+  background-color: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s ease;
   transform: translateY(0);
-  width: 100%;            
+  width: 100%;             
 }
 
 
 
-.card-trilha:hover {
+.card-noticia:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
 
-
-.trilha-imagem img {
+.card-noticia img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
-  display: block;
   transition: transform 0.4s ease;
 }
 
 
-.trilha-titulo {
-  font-size: 1.3rem;
-  margin: 15px 0;
-  color: #222;
-  font-weight: 600;
+.card-noticia:hover img {
+  transform: scale(1.05);
 }
 
 
-.btn-trilha {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  align-self: center; 
+.card-noticia h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 20px 24px 10px;
+  color: #024959;
+}
+
+
+.card-noticia p {
+  margin: 0 24px 20px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+.card-noticia .btn-link {
+  display: inline-block;
+  width: fit-content;       
+  align-self: flex-start;    
   background: linear-gradient(135deg, #037c91, #024959);
   color: white;
   padding: 10px 20px;
@@ -124,70 +124,47 @@
   font-weight: bold;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  margin-top: 15px;
+  margin: 0 24px 24px;
 }
 
-.btn-trilha:hover {
+
+.card-noticia .btn-link:hover {
   background: linear-gradient(135deg, #049cb1, #036278);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-.trilha-conteudo {
-  padding: 22px;
-  text-align: left;
-}
 
-
-.trilha-titulo {
-  font-size: 1.3rem;
-  color: #024959;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-
-.sem-trilhas {
+.noticias > p {
   text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  padding: 30px 0;
+  font-size: 1rem;
+  color: #4b5563;
 }
 
 
 
 @media (max-width: 900px) {
-  .banner h2 {
-    font-size: 2rem;
+  .noticias {
+    padding: 50px 30px;
   }
-
   .banner-overlay {
     padding-left: 30px;
   }
-
-  .titulo-trilhas {
+  .banner h2 {
     font-size: 2rem;
-  }
-
-  .trilhas-section {
-    padding: 50px 30px;
   }
 }
 
 @media (max-width: 600px) {
+  .noticias {
+    padding: 40px 20px;
+  }
+
   .banner {
-    height: 150px;
+    height: 130px;
   }
 
   .banner h2 {
     font-size: 1.7rem;
-  }
-
-  .trilhas-section {
-    padding: 40px 20px;
-  }
-
-  .titulo-trilhas {
-    font-size: 1.6rem;
   }
 }

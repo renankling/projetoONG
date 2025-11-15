@@ -4,16 +4,15 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   transition: background-color 0.9s ease;
-  overflow: hidden; /* evita quebra visual */
+  overflow: hidden; 
 }
 
-/* --- Animação suave --- */
+
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Título suave --- */
 .trilhas h2 {
   font-size: 2.5rem;
   color: #024959;
@@ -24,7 +23,6 @@
   transition: color 0.9s ease;
 }
 
-/* --- Parágrafo suave --- */
 .trilhas p {
   font-size: 1.1rem;
   color: #555;

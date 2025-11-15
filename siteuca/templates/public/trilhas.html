@@ -1,36 +1,53 @@
 {% extends "base.html" %}
-{% load static %}
+
+
 {% block title %}Trilhas{% endblock %}
+{% load static %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/trilha/trilha.css' %}">
 {% endblock %}
 
+
 {% block content %}
+
+<section class="banner">
+  <div class="banner-overlay">
+    <h2>Trilhas de conhecimento</h2>
+  </div>
+</section>
+
 <section class="trilhas-section">
   <div class="container-trilhas">
+
     <h1 class="titulo-trilhas">Trilhas</h1>
 
     <div class="grid-trilhas">
-      {% for trilha in trilhas %}
-        <article class="card-trilha">
-          {% if trilha.imagem %}
-            <div class="trilha-imagem">
-              <img src="{{ trilha.imagem.url }}" alt="{{ trilha.titulo }}">
-            </div>
-          {% endif %}
 
-          <div class="trilha-conteudo">
-            <h3 class="trilha-titulo">{{ trilha.titulo }}</h3>
-            {% if trilha.link_externo %}
-              <a href="{{ trilha.link_externo }}" target="_blank" class="btn-trilha">Ler trilha</a>
-            {% endif %}
-          </div>
-        </article>
+      {% for trilha in trilhas %}
+      <article class="card-trilha">
+
+        {% if trilha.imagem %}
+        <div class="trilha-imagem">
+          <img src="{{ trilha.imagem.url }}" alt="{{ trilha.titulo }}">
+        </div>
+        {% endif %}
+
+        <div class="trilha-conteudo">
+          <h3 class="trilha-titulo">{{ trilha.titulo }}</h3>
+
+          {% if trilha.link_externo %}
+          <a href="{{ trilha.link_externo }}" class="btn-trilha" target="_blank">Ler trilha</a>
+          {% endif %}
+        </div>
+
+      </article>
       {% empty %}
-        <p class="sem-trilhas">Nenhuma trilha cadastrada.</p>
+      <p class="sem-trilhas">Nenhuma trilha cadastrada.</p>
       {% endfor %}
+
     </div>
   </div>
 </section>
+
 {% endblock %}
