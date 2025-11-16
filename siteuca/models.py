@@ -25,8 +25,8 @@ class Projeto(models.Model):
 class Integrante(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="integrantes")
     nome = models.CharField(max_length=120)
-    funcao = models.CharField(max_length=120, blank=True)
-    imagem = models.ImageField(upload_to="integrantes/", blank=True, null=True)
+    funcao = models.CharField(max_length=120)
+    imagem = models.ImageField(upload_to="integrantes/")
     descricao = models.TextField(blank=True)
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -37,10 +37,10 @@ class Noticia(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="noticias")
     titulo = models.CharField(max_length=180)
     conteudo = models.TextField(blank=True)
-    data_publicacao = models.DateTimeField(auto_now_add=True)
-    imagem = models.ImageField(upload_to="noticias/", blank=True, null=True)
-    link_externo = models.URLField(blank=True, null=True)  
-    autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    data_publicacao = models.DateTimeField(auto_now_add=False)
+    imagem = models.ImageField(upload_to="noticias/")
+    link_externo = models.URLField()  
+    criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.titulo
@@ -60,8 +60,8 @@ class Trilha(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE, related_name="trilhas")
     titulo = models.CharField(max_length=180)
     data_publicacao = models.DateTimeField(auto_now_add=False)
-    imagem = models.ImageField(upload_to="trilhas/", blank=True, null=True)
-    link_externo = models.URLField(blank=True, null=True)  
-
+    imagem = models.ImageField(upload_to="trilhas/")
+    link_externo = models.URLField()  
+    criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     def __str__(self):
         return self.titulo

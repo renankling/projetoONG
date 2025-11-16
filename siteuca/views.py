@@ -54,6 +54,7 @@ class TrilhaListView(ListView):
     model = Trilha
     template_name = "public/trilhas.html"
     context_object_name = "trilhas"
+    ordering = ["-data_publicacao"]
 
 
     def form_valid(self, form):
